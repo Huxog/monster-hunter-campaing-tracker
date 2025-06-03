@@ -33,14 +33,14 @@ build:
 	docker compose -f docker/docker-compose.yml --env-file ./.env build
 
 up:
-	docker up -d
+	docker compose -f docker/docker-compose.yml --env-file ./.env up -d
 
 down:
-	docker down
+	docker compose -f docker/docker-compose.yml down
 
 rebuild:
-	docker down -v
-	docker up -d --build
+	docker compose -f docker/docker-compose.yml down
+	docker compose -f docker/docker-compose.yml --env-file ./.env up -d
 
 logs:
 	docker logs -f $(APP_SERVICE)
@@ -59,4 +59,5 @@ help:
 	@echo "  make fresh           - Fresh DB + seed"
 	@echo "  make seed            - Run seeders"
 	@echo "  make test            - Run tests"
+	@echo "  make key-generate    - Run generate app key"
 	@echo "  make install         - Run composer install"
