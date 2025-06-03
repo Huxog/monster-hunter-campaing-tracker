@@ -2,6 +2,11 @@
 COMPOSE=docker compose -f docker/docker-compose.yml --env-file ./.env
 APP_SERVICE=mh-app-service
 
+# Storage fix commands
+chown:
+	docker exec $(APP_SERVICE) chown -R 82:82 /var/www/html/storage
+	docker exec $(APP_SERVICE) chmod -R 775 /var/www/html/storage
+
 # Laravel Artisan Commands
 migrate:
 	docker exec $(APP_SERVICE) php artisan migrate
@@ -58,6 +63,7 @@ help:
 	@echo "  make stop            - Stop containers"
 	@echo "  make build           - Build containers from scratch"
 	@echo "  make rebuild         - Rebuild containers and clear volumes"
+	@echo "  make logs         	  - See logs of app container"
 	@echo "  make migrate         - Run migrations"
 	@echo "  make status          - Migration status"
 	@echo "  make fresh           - Fresh DB + seed"
@@ -65,3 +71,4 @@ help:
 	@echo "  make test            - Run tests"
 	@echo "  make key-generate    - Run generate app key"
 	@echo "  make install         - Run composer install"
+	@echo "  make chown           - fix storage access permissions"
