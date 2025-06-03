@@ -35,6 +35,9 @@ build:
 up:
 	docker compose -f docker/docker-compose.yml --env-file ./.env up -d
 
+stop:
+	docker compose -f docker/docker-compose.yml stop
+
 down:
 	docker compose -f docker/docker-compose.yml down
 
@@ -52,6 +55,7 @@ help:
 	@echo "Makefile Laravel + Docker Commands:"
 	@echo "  make up              - Start and build containers"
 	@echo "  make down            - Stop and remove containers"
+	@echo "  make stop            - Stop containers"
 	@echo "  make build           - Build containers from scratch"
 	@echo "  make rebuild         - Rebuild containers and clear volumes"
 	@echo "  make migrate         - Run migrations"
