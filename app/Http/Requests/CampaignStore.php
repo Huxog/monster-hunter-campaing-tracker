@@ -64,12 +64,12 @@ class CampaignStore extends FormRequest
     public function codes(): array
     {
         return [
-            'name.required' => 'CAM-0204-0001',
-            'name.string' => 'CAM-0204-0002',
-            'team.required' => 'CAM-0204-0003',
-            'team.string' => 'CAM-0204-0004',
-            'mapId.numeric' => 'CAM-0204-0005',
-            'mapId.exists' => 'CAM-0204-0006',
+            'name.required' => 'CAM-0202-0001',
+            'name.string' => 'CAM-0202-0002',
+            'team.required' => 'CAM-0202-0003',
+            'team.string' => 'CAM-0202-0004',
+            'mapId.numeric' => 'CAM-0202-0005',
+            'mapId.exists' => 'CAM-0202-0006',
         ];
     }
 }

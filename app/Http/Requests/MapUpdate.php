@@ -60,9 +60,9 @@ class MapUpdate extends FormRequest
     public function codes(): array
     {
         return [
-            'name.required' => 'MAP-0202-0001',
-            'name.string' => 'MAP-0202-0002',
-            'name.unique' => 'MAP-0202-0003',
+            'name.required' => 'MAP-0204-0001',
+            'name.string' => 'MAP-0204-0002',
+            'name.unique' => 'MAP-0204-0003',
         ];
     }
 }
