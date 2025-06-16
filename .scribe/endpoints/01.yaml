@@ -1,20 +1,20 @@
-name: Campaigns
+name: Maps
 description: |-
 
-  APIs for managing campaigns
+  Endpoints for managing maps
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/campaings
+    uri: api/maps
     metadata:
-      groupName: Campaigns
+      groupName: Maps
       groupDescription: |-
 
-        APIs for managing campaigns
+        Endpoints for managing maps
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display a listing of campaigns.'
+      title: 'Display a listing of maps.'
       description: ''
       authenticated: true
       custom: []
@@ -53,7 +53,7 @@ endpoints:
     responses:
       -
         status: 500
-        content: '{"message":"SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for mysql failed: Temporary failure in name resolution (Connection: mysql, SQL: select * from `campaigns` where `campaigns`.`deleted_at` is null)","code":"UMP-0200-0000"}'
+        content: '{"message":"SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for mysql failed: Temporary failure in name resolution (Connection: mysql, SQL: select * from `maps` where `maps`.`deleted_at` is null)","code":"UMP-0200-0000"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -69,15 +69,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/campaings
+    uri: api/maps
     metadata:
-      groupName: Campaigns
+      groupName: Maps
       groupDescription: |-
 
-        APIs for managing campaigns
+        Endpoints for managing maps
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create a new campaign.'
+      title: 'Store a newly created map in storage.'
       description: ''
       authenticated: true
       custom: []
@@ -91,38 +91,16 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'string The name of the campaign'
-        required: false
-        example: architecto
-        type: required
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      team:
-        name: team
-        description: 'string the name of the team that will play on the campaign'
-        required: false
-        example: architecto
-        type: required
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      mapId:
-        name: mapId
-        description: 'the map in which the campaign will be played'
-        required: false
-        example: architecto
-        type: optional
+        description: 'The name of the map.'
+        required: true
+        example: 'Ancient Forest'
+        type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: architecto
-      team: architecto
-      mapId: architecto
+      name: 'Ancient Forest'
     fileParameters: []
     responses: []
     responseFields: []
@@ -134,17 +112,17 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/campaings/{id}'
+    uri: 'api/maps/{id}'
     metadata:
-      groupName: Campaigns
+      groupName: Maps
       groupDescription: |-
 
-        APIs for managing campaigns
+        Endpoints for managing maps
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display the specified resource.'
+      title: 'Display the specified map.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json
@@ -152,7 +130,7 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the campaing.'
+        description: 'The ID of the map.'
         required: true
         example: 16
         type: integer
@@ -170,7 +148,10 @@ endpoints:
     responses:
       -
         status: 500
-        content: '{"message":"SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for mysql failed: Temporary failure in name resolution (Connection: mysql, SQL: select * from `campaigns` where `campaigns`.`id` is null and `campaigns`.`deleted_at` is null limit 1)","code":"UMP-0200-0000"}'
+        content: |-
+          {
+              "message": "Server Error"
+          }
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -187,17 +168,17 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/campaings/{id}'
+    uri: 'api/maps/{id}'
     metadata:
-      groupName: Campaigns
+      groupName: Maps
       groupDescription: |-
 
-        APIs for managing campaigns
+        Endpoints for managing maps
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
+      title: 'Update the specified map in storage.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json
@@ -205,7 +186,7 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the campaing.'
+        description: 'The ID of the map.'
         required: true
         example: 16
         type: integer
@@ -220,38 +201,16 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: ''
+        description: 'The name of the map.'
         required: true
-        example: architecto
+        example: 'Ancient Forest'
         type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      team:
-        name: team
-        description: ''
-        required: true
-        example: architecto
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      mapId:
-        name: mapId
-        description: 'The <code>id</code> of an existing record in the maps table.'
-        required: false
-        example: 4326.41688
-        type: number
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: architecto
-      team: architecto
-      mapId: 4326.41688
+      name: 'Ancient Forest'
     fileParameters: []
     responses: []
     responseFields: []
@@ -263,17 +222,17 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/campaings/{id}'
+    uri: 'api/maps/{id}'
     metadata:
-      groupName: Campaigns
+      groupName: Maps
       groupDescription: |-
 
-        APIs for managing campaigns
+        Endpoints for managing maps
       subgroup: ''
       subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
+      title: 'Remove the specified map from storage.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json
@@ -281,7 +240,7 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the campaing.'
+        description: 'The ID of the map.'
         required: true
         example: 16
         type: integer

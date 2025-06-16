@@ -14,11 +14,12 @@ use Illuminate\Http\JsonResponse;
 /**
  * @group Campaigns
  *
- * APIs for managing campaigns
+ * Endpoints for managing campaigns
  */
 class CampaignController extends Controller
 {
     use FormatExceptionResponse;
+
     /**
      * Display a listing of campaigns.
      *
@@ -38,13 +39,10 @@ class CampaignController extends Controller
     }
 
     /**
-     * Create a new campaign.
+     * Store a newly created campaign in storage.
      *
      * @authenticated
      *
-     * @bodyParam name string required The name of the campaign
-     * @bodyParam team string required the name of the team that will play on the campaign
-     * @bodyParam mapId int optional the map in which the campaign will be played
      */
     public function store(CampaignStore $request)
     {
@@ -56,7 +54,9 @@ class CampaignController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified campaign.
+     *
+     * @authenticated
      */
     public function show(Campaign $campaign)
     {
@@ -70,7 +70,9 @@ class CampaignController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified campaign in storage.
+     *
+     * @authenticated
      */
     public function update(CampaignUpdate $request, Campaign $campaign)
     {
@@ -84,7 +86,9 @@ class CampaignController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified campaign from storage.
+     *
+     * @authenticated
      */
     public function destroy(Campaign $campaign)
     {

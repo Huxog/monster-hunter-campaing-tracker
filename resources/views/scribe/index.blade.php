@@ -75,16 +75,16 @@
                                 <a href="#campaigns-GETapi-campaings">Display a listing of campaigns.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="campaigns-POSTapi-campaings">
-                                <a href="#campaigns-POSTapi-campaings">Create a new campaign.</a>
+                                <a href="#campaigns-POSTapi-campaings">Store a newly created campaign in storage.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="campaigns-GETapi-campaings--id-">
-                                <a href="#campaigns-GETapi-campaings--id-">Display the specified resource.</a>
+                                <a href="#campaigns-GETapi-campaings--id-">Display the specified campaign.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="campaigns-PUTapi-campaings--id-">
-                                <a href="#campaigns-PUTapi-campaings--id-">Update the specified resource in storage.</a>
+                                <a href="#campaigns-PUTapi-campaings--id-">Update the specified campaign in storage.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="campaigns-DELETEapi-campaings--id-">
-                                <a href="#campaigns-DELETEapi-campaings--id-">Remove the specified resource from storage.</a>
+                                <a href="#campaigns-DELETEapi-campaings--id-">Remove the specified campaign from storage.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -96,20 +96,27 @@
                                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-maps">
-                                <a href="#endpoints-GETapi-maps">Display a listing of the resource.</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-maps" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="maps">
+                    <a href="#maps">Maps</a>
+                </li>
+                                    <ul id="tocify-subheader-maps" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="maps-GETapi-maps">
+                                <a href="#maps-GETapi-maps">Display a listing of maps.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-maps">
-                                <a href="#endpoints-POSTapi-maps">Store a newly created resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="maps-POSTapi-maps">
+                                <a href="#maps-POSTapi-maps">Store a newly created map in storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-maps--id-">
-                                <a href="#endpoints-GETapi-maps--id-">Display the specified resource.</a>
+                                                                                <li class="tocify-item level-2" data-unique="maps-GETapi-maps--id-">
+                                <a href="#maps-GETapi-maps--id-">Display the specified map.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-maps--id-">
-                                <a href="#endpoints-PUTapi-maps--id-">Update the specified resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="maps-PUTapi-maps--id-">
+                                <a href="#maps-PUTapi-maps--id-">Update the specified map in storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-maps--id-">
-                                <a href="#endpoints-DELETEapi-maps--id-">Remove the specified resource from storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="maps-DELETEapi-maps--id-">
+                                <a href="#maps-DELETEapi-maps--id-">Remove the specified map from storage.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -143,7 +150,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
         <h1 id="campaigns">Campaigns</h1>
 
-    <p>APIs for managing campaigns</p>
+    <p>Endpoints for managing campaigns</p>
 
                                 <h2 id="campaigns-GETapi-campaings">Display a listing of campaigns.</h2>
 
@@ -301,7 +308,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                 </form>
 
-                    <h2 id="campaigns-POSTapi-campaings">Create a new campaign.</h2>
+                    <h2 id="campaigns-POSTapi-campaings">Store a newly created campaign in storage.</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -319,9 +326,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"architecto\",
-    \"team\": \"architecto\",
-    \"mapId\": \"architecto\"
+    \"name\": \"Super awesome campaign\",
+    \"team\": \"Power rangers\",
+    \"mapId\": 2
 }"
 </code></pre></div>
 
@@ -337,9 +344,9 @@ const headers = {
 };
 
 let body = {
-    "name": "architecto",
-    "team": "architecto",
-    "mapId": "architecto"
+    "name": "Super awesome campaign",
+    "team": "Power rangers",
+    "mapId": 2
 };
 
 fetch(url, {
@@ -424,42 +431,43 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>required</small>&nbsp;
-<i>optional</i> &nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-campaings"
-               value="architecto"
+               value="Super awesome campaign"
                data-component="body">
     <br>
-<p>string The name of the campaign Example: <code>architecto</code></p>
+<p>The name of the campaign. Example: <code>Super awesome campaign</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>team</code></b>&nbsp;&nbsp;
-<small>required</small>&nbsp;
-<i>optional</i> &nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
                 <input type="text" style="display: none"
                               name="team"                data-endpoint="POSTapi-campaings"
-               value="architecto"
+               value="Power rangers"
                data-component="body">
     <br>
-<p>string the name of the team that will play on the campaign Example: <code>architecto</code></p>
+<p>The name of the team that will play on the campaign. Example: <code>Power rangers</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>mapId</code></b>&nbsp;&nbsp;
-<small>optional</small>&nbsp;
+<small>number</small>&nbsp;
 <i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="mapId"                data-endpoint="POSTapi-campaings"
-               value="architecto"
+                <input type="number" style="display: none"
+               step="any"               name="mapId"                data-endpoint="POSTapi-campaings"
+               value="2"
                data-component="body">
     <br>
-<p>the map in which the campaign will be played Example: <code>architecto</code></p>
+<p>The map in which the campaign will be played. The <code>id</code> of an existing record in the maps table. Example: <code>2</code></p>
         </div>
         </form>
 
-                    <h2 id="campaigns-GETapi-campaings--id-">Display the specified resource.</h2>
+                    <h2 id="campaigns-GETapi-campaings--id-">Display the specified campaign.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -528,7 +536,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-campaings--id-" data-method="GET"
       data-path="api/campaings/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -594,9 +602,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="campaigns-PUTapi-campaings--id-">Update the specified resource in storage.</h2>
+                    <h2 id="campaigns-PUTapi-campaings--id-">Update the specified campaign in storage.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -611,9 +620,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"architecto\",
-    \"team\": \"architecto\",
-    \"mapId\": 4326.41688
+    \"name\": \"Super awesome campaign\",
+    \"team\": \"Power rangers\",
+    \"mapId\": 2
 }"
 </code></pre></div>
 
@@ -629,9 +638,9 @@ const headers = {
 };
 
 let body = {
-    "name": "architecto",
-    "team": "architecto",
-    "mapId": 4326.41688
+    "name": "Super awesome campaign",
+    "team": "Power rangers",
+    "mapId": 2
 };
 
 fetch(url, {
@@ -661,7 +670,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-PUTapi-campaings--id-" data-method="PUT"
       data-path="api/campaings/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -736,10 +745,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-campaings--id-"
-               value="architecto"
+               value="Super awesome campaign"
                data-component="body">
     <br>
-<p>Example: <code>architecto</code></p>
+<p>The name of the campaign. Example: <code>Super awesome campaign</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>team</code></b>&nbsp;&nbsp;
@@ -747,10 +756,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="team"                data-endpoint="PUTapi-campaings--id-"
-               value="architecto"
+               value="Power rangers"
                data-component="body">
     <br>
-<p>Example: <code>architecto</code></p>
+<p>The name of the team that will play on the campaign. Example: <code>Power rangers</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>mapId</code></b>&nbsp;&nbsp;
@@ -758,16 +767,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="mapId"                data-endpoint="PUTapi-campaings--id-"
-               value="4326.41688"
+               value="2"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the maps table. Example: <code>4326.41688</code></p>
+<p>The map in which the campaign will be played. The <code>id</code> of an existing record in the maps table. Example: <code>2</code></p>
         </div>
         </form>
 
-                    <h2 id="campaigns-DELETEapi-campaings--id-">Remove the specified resource from storage.</h2>
+                    <h2 id="campaigns-DELETEapi-campaings--id-">Remove the specified campaign from storage.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -819,7 +829,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-DELETEapi-campaings--id-" data-method="DELETE"
       data-path="api/campaings/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1013,9 +1023,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-maps">Display a listing of the resource.</h2>
+                <h1 id="maps">Maps</h1>
+
+    <p>Endpoints for managing maps</p>
+
+                                <h2 id="maps-GETapi-maps">Display a listing of maps.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1026,7 +1041,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:1061/api/maps" \
+    --get "http://localhost:1061/api/maps?sort=architecto&amp;direction=architecto" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -1035,6 +1050,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-javascript">const url = new URL(
     "http://localhost:1061/api/maps"
 );
+
+const params = {
+    "sort": "architecto",
+    "direction": "architecto",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Content-Type": "application/json",
@@ -1084,7 +1106,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-maps" data-method="GET"
       data-path="api/maps"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1136,11 +1158,35 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sort</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="sort"                data-endpoint="GETapi-maps"
+               value="architecto"
+               data-component="query">
+    <br>
+<p>Field to sort by. Defaults to 'id' Example: <code>architecto</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>direction</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="direction"                data-endpoint="GETapi-maps"
+               value="architecto"
+               data-component="query">
+    <br>
+<p>Direction of the sorting 'asc'/'desc' Example: <code>architecto</code></p>
+            </div>
+                </form>
 
-                    <h2 id="endpoints-POSTapi-maps">Store a newly created resource in storage.</h2>
+                    <h2 id="maps-POSTapi-maps">Store a newly created map in storage.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1155,7 +1201,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"architecto\"
+    \"name\": \"Ancient Forest\"
 }"
 </code></pre></div>
 
@@ -1171,7 +1217,7 @@ const headers = {
 };
 
 let body = {
-    "name": "architecto"
+    "name": "Ancient Forest"
 };
 
 fetch(url, {
@@ -1201,7 +1247,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-maps" data-method="POST"
       data-path="api/maps"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1260,16 +1306,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-maps"
-               value="architecto"
+               value="Ancient Forest"
                data-component="body">
     <br>
-<p>Example: <code>architecto</code></p>
+<p>The name of the map. Example: <code>Ancient Forest</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-maps--id-">Display the specified resource.</h2>
+                    <h2 id="maps-GETapi-maps--id-">Display the specified map.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1337,7 +1384,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-maps--id-" data-method="GET"
       data-path="api/maps/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1403,9 +1450,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-PUTapi-maps--id-">Update the specified resource in storage.</h2>
+                    <h2 id="maps-PUTapi-maps--id-">Update the specified map in storage.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1420,7 +1468,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"architecto\"
+    \"name\": \"Ancient Forest\"
 }"
 </code></pre></div>
 
@@ -1436,7 +1484,7 @@ const headers = {
 };
 
 let body = {
-    "name": "architecto"
+    "name": "Ancient Forest"
 };
 
 fetch(url, {
@@ -1466,7 +1514,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-PUTapi-maps--id-" data-method="PUT"
       data-path="api/maps/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1541,16 +1589,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-maps--id-"
-               value="architecto"
+               value="Ancient Forest"
                data-component="body">
     <br>
-<p>Example: <code>architecto</code></p>
+<p>The name of the map. Example: <code>Ancient Forest</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-DELETEapi-maps--id-">Remove the specified resource from storage.</h2>
+                    <h2 id="maps-DELETEapi-maps--id-">Remove the specified map from storage.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1602,7 +1651,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-DELETEapi-maps--id-" data-method="DELETE"
       data-path="api/maps/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"

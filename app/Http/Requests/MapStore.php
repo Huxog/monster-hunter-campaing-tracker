@@ -65,4 +65,20 @@ class MapStore extends FormRequest
             'name.unique' => 'MAP-0202-0003',
         ];
     }
+
+    /**
+     * Provide descriptions and examples for the request body parameters.
+     *
+     * @return array
+     */
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'description' => 'The name of the map',
+                'example' => 'Ancient Forest',
+            ],
+        ];
+    }
+
 }
