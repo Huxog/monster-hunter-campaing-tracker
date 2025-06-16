@@ -11,11 +11,22 @@ use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
 
+/**
+ * @group Campaigns
+ *
+ * APIs for managing campaigns
+ */
 class CampaignController extends Controller
 {
     use FormatExceptionResponse;
     /**
-     * Display a listing of the resource.
+     * Display a listing of campaigns.
+     *
+     * @authenticated
+     *
+     * @queryParam sort string Field to sort by. Defaults to 'id'
+     * @queryParam direction string Direction of the sorting 'asc'/'desc'
+     *
      */
     public function index(): JsonResponse
     {
@@ -27,7 +38,13 @@ class CampaignController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create a new campaign.
+     *
+     * @authenticated
+     *
+     * @bodyParam name string required The name of the campaign
+     * @bodyParam team string required the name of the team that will play on the campaign
+     * @bodyParam mapId int optional the map in which the campaign will be played
      */
     public function store(CampaignStore $request)
     {
