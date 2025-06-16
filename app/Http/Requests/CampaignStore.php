@@ -72,4 +72,28 @@ class CampaignStore extends FormRequest
             'mapId.exists' => 'CAM-0202-0006',
         ];
     }
+
+    /**
+     * Provide descriptions and examples for the request body parameters.
+     *
+     * @return array
+     */
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'description' => 'The name of the campaign',
+                'example' => 'Super awesome campaign',
+            ],
+            'team' => [
+                'description' => 'The name of the team that will play on the campaign',
+                'example' => 'Power rangers',
+            ],
+            'mapId' => [
+                'description' => 'The map in which the campaign will be played',
+                'example' => '2',
+            ],
+        ];
+    }
+
 }

@@ -4,8 +4,8 @@ APP_SERVICE=mh-app-service
 
 # Storage fix commands
 chown:
-	docker exec $(APP_SERVICE) chown -R 82:82 /var/www/html/storage
-	docker exec $(APP_SERVICE) chmod -R 775 /var/www/html/storage
+	docker exec $(APP_SERVICE) chown -R www-data:www-data /var/www/html/storage
+	docker exec $(APP_SERVICE) chmod -R 777 /var/www/html/storage
 
 # Laravel Artisan Commands
 migrate:
