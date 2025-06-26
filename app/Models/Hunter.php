@@ -4,9 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Iluminate\Database\Eloquent\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Hunter extends Model
 {
+
+    /** @use HasFactory<\Database\Factories\HunterFactory> */
+    use HasFactory, SoftDeletes;
+
       /** @var string $table table used to store the model */
     protected $table = 'hunters';
 
