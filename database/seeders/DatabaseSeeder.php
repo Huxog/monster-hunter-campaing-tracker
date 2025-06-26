@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         self::call([
             MapSeeder::class,
             CampaignSeeder::class,
+            HunterSeeder::class,
         ]);
     }
 }
