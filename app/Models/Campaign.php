@@ -41,9 +41,9 @@ class Campaign extends Model
      *
      * @return HasMany
      */
-    // public function hunters(): HasMany
-    // {
-    //     return $this->hasMany(Hunter::class);
-    // }
+    public function hunters(): HasMany
+    {
+        return $this->hasMany(Hunter::class);
+    }
 
 }
