@@ -11,8 +11,8 @@ class MapService
 
     /**
      * Function description
-     * @param array $data
-     * @return array
+     *
+     * @param  array  $data
      */
     public static function getAll(): array
     {
@@ -21,8 +21,6 @@ class MapService
 
     /**
      * Function description
-     * @param int $id
-     * @return array
      */
     public static function getById(int $id): array
     {
@@ -31,37 +29,40 @@ class MapService
 
     /**
      * Function description
-     * @param array $data
-     * @return array
+     *
+     * @param  array  $data
      */
     public static function create($data): array
     {
         $newMap = Map::create($data);
+
         return self::arrayResponse($newMap);
     }
 
     /**
      * Function description
-     * @param array $data
-     * @param int $id
-     * @return array
+     *
+     * @param  array  $data
+     * @param  int  $id
      */
     public static function update($data, $id): array
     {
         $updatedMap = Map::findOrFail($id);
         $updatedMap->update($data);
+
         return self::arrayResponse($updatedMap);
     }
 
     /**
      * Function description
-     * @param array $id
-     * @return array
+     *
+     * @param  array  $id
      */
     public static function delete($id): array
     {
         $deletedMap = Map::findOrFail($id);
         Map::delete($id);
+
         return self::arrayResponse($deletedMap);
     }
 }

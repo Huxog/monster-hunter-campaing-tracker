@@ -8,6 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class CampaignUpdate extends FormRequest
 {
     use FormatValidationFailure;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -26,7 +27,7 @@ class CampaignUpdate extends FormRequest
         return [
             'name' => 'required|string',
             'team' => 'required|string',
-            'mapId' => 'sometimes|numeric|exists:maps,id,deleted_at,NULL'
+            'mapId' => 'sometimes|numeric|exists:maps,id,deleted_at,NULL',
         ];
     }
 
@@ -47,7 +48,9 @@ class CampaignUpdate extends FormRequest
      *      delete     -> 05
      *      custom     -> 06
      * 4 digit sequence map
+     *
      * @return array<string, string>
+     *
      * @throws conditon
      **/
     public function messages(): array
@@ -58,7 +61,7 @@ class CampaignUpdate extends FormRequest
             'team.required' => 'Please name your team for this campaign',
             'team.string' => 'The team name must be a string',
             'mapId.numeric' => 'Must be a valid map identifier',
-            'mapId.exists' => 'No valid map found'
+            'mapId.exists' => 'No valid map found',
         ];
     }
 

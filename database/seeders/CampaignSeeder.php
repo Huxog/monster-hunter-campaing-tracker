@@ -15,7 +15,7 @@ class CampaignSeeder extends Seeder
     {
         Map::all()->each(function ($map) {
             Campaign::factory(5)->create([
-                'mapId'=> $map->id,
+                'mapId' => $map->id,
             ]);
         });
     }

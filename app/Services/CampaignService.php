@@ -11,7 +11,6 @@ class CampaignService
 
     /**
      * Function description
-     * @return array
      */
     public static function getAll(): array
     {
@@ -20,8 +19,8 @@ class CampaignService
 
     /**
      * Function description
-     * @param int $id
-     * @return array
+     *
+     * @param  int  $id
      */
     public static function getById($id): array
     {
@@ -30,37 +29,40 @@ class CampaignService
 
     /**
      * Function description
-     * @param array $data
-     * @return array
+     *
+     * @param  array  $data
      */
     public static function create($data): array
     {
         $newCampaign = Campaign::create($data);
+
         return self::arrayResponse($newCampaign);
     }
 
     /**
      * Function description
-     * @param array $data
-     * @param int $id
-     * @return array
+     *
+     * @param  array  $data
+     * @param  int  $id
      */
     public static function update($data, $id): array
     {
         $updatedCampaign = Campaign::findOrFail($id);
         $updatedCampaign = Campaign::update($data);
+
         return self::arrayResponse($updatedCampaign);
     }
 
     /**
      * Function description
-     * @param int $id
-     * @return array
+     *
+     * @param  int  $id
      */
     public static function delete($id): array
     {
         $deletedCampaign = Campaign::findOrFail($id);
         Campaign::delete($id);
+
         return self::arrayResponse($deletedCampaign);
     }
 }

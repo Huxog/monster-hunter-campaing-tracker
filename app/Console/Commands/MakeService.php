@@ -29,7 +29,7 @@ class MakeService extends Command
         $serviceName = $this->argument('name');
 
         // Ensure the name ends with "Service"
-        if (!str_ends_with($serviceName, 'Service')) {
+        if (! str_ends_with($serviceName, 'Service')) {
             $serviceName .= 'Service';
         }
 
@@ -37,13 +37,14 @@ class MakeService extends Command
         $servicePath = "{$serviceDirectory}/{$serviceName}.php";
 
         // Ensure the directory exists
-        if (!File::exists($serviceDirectory)) {
+        if (! File::exists($serviceDirectory)) {
             File::makeDirectory($serviceDirectory, 0755, true);
         }
 
         // Check if the file already exists
         if (File::exists($servicePath)) {
             $this->fail("The service '{$serviceName}' already exists!");
+
             return;
         }
 
@@ -52,7 +53,7 @@ class MakeService extends Command
 
 namespace App\Services;
 
-class ' . $serviceName . '
+class '.$serviceName.'
 {
     /**
     * Function description
@@ -103,6 +104,6 @@ class ' . $serviceName . '
 ';
 
         // Attempt to create file; output status
-        File::put($servicePath, $template) ?  $this->info("Service '{$serviceName}' created successfully") : $this->error("Could not create '{$serviceName}'");
+        File::put($servicePath, $template) ? $this->info("Service '{$serviceName}' created successfully") : $this->error("Could not create '{$serviceName}'");
     }
 }

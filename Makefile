@@ -26,6 +26,12 @@ test:
 key-generate:
 	docker exec $(APP_SERVICE) php artisan key:generate
 
+lint-test:
+	./vendor/bin/pint --test
+    
+lint:
+	./vendor/bin/pint
+
 # Composer
 install:
 	docker exec $(APP_SERVICE) composer install
@@ -71,4 +77,6 @@ help:
 	@echo "  make test            - Run tests"
 	@echo "  make key-generate    - Run generate app key"
 	@echo "  make install         - Run composer install"
+	@echo "  make lint            - Check and apply lint rules"
+	@echo "  make lint-test       - List unnmet lint rules"
 	@echo "  make chown           - fix storage access permissions"

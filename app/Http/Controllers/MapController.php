@@ -14,6 +14,7 @@ use Illuminate\Http\JsonResponse;
 class MapController extends Controller
 {
     use FormatExceptionResponse;
+
     /**
      * Display a listing of the resource.
      */

@@ -8,6 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class MapStore extends FormRequest
 {
     use FormatValidationFailure;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -45,7 +46,9 @@ class MapStore extends FormRequest
      *      delete     -> 05
      *      custom     -> 06
      * 4 digit sequence map
+     *
      * @return array<string, string>
+     *
      * @throws conditon
      **/
     public function messages(): array

@@ -14,6 +14,7 @@ use Illuminate\Http\JsonResponse;
 class CampaignController extends Controller
 {
     use FormatExceptionResponse;
+
     /**
      * Display a listing of the resource.
      */
