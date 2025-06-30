@@ -1,4 +1,4 @@
-name: Fix Code Style
+name: Check laravel linting
 
 on:
   push:
@@ -29,6 +29,3 @@ jobs:
 
       - name: Run Pint
         run: pint --test
-
-      - name: Commit linted files
-        uses: stefanzweifel/git-auto-commit-action@v5
