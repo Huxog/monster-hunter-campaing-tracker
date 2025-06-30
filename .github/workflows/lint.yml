@@ -1,9 +1,8 @@
-name: Check laravel linting
+name: Laravel lint check
 
 on:
-  push:
-    branches:
-      - 5-set-up-linter-checks-on-repo
+  pull_request:
+    branches: [ main ]
 
 jobs:
   lint:
